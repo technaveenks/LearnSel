@@ -6,7 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HomeTests {
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\navee\\Projects\\LearnSel\\lib\\chromedriver.exe");
+		String path = System.getProperty("user.dir");
+		System.setProperty("webdriver.chrome.driver", path+"/lib/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
 		driver.manage().window().maximize();
@@ -18,6 +19,16 @@ public class HomeTests {
 		String dressName = driver.findElement
 				(By.xpath("//*[@id='center_column']/ul/li/div/div[2]/h5/a")).getText();
 		System.out.println(dressName);
+		/*
+		 * String data = driver.findElement(By
+		 * .xpath("//*[@id='best-sellers_block_right']/div/ul/li[4]/div/h5/a"))
+		 * .getText();
+		 */
+		String data = driver.findElement(By
+				.partialLinkText("Printed Summer Dress")).getText();
+		System.out.println(data);
+		driver.close();
+		driver.quit();
 	}
 
 }
