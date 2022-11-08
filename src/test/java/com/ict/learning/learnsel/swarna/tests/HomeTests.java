@@ -6,7 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HomeTests {
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "/Users/spenumallu/java/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "/Users/spenumallu/java/chromedriver");
+		String path = System.getProperty("user.dir");
+		System.out.println(path);
+		System.setProperty("webdriver.chrome.driver", path+"/mac-lib/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
 		driver.manage().window().maximize();
