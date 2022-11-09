@@ -15,8 +15,8 @@ public class SmokeTest {
 
 	@BeforeTest
 	public void createDriver() {
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\navee\\Projects\\SelAutomation\\lib\\chromedriver.exe");
+		String path = System.getProperty("user.dir");
+		System.setProperty("webdriver.chrome.driver", path+"/lib/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/");
 		driver.manage().window().maximize();
