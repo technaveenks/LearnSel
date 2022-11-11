@@ -8,7 +8,7 @@ public class HomeTests {
 	public static void main(String[] args) {
 		//System.setProperty("webdriver.chrome.driver", "/Users/spenumallu/java/chromedriver");
 		String path = System.getProperty("user.dir");
-		System.out.println(path);
+		//System.out.println(path);
 		System.setProperty("webdriver.chrome.driver", path+"/mac-lib/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
@@ -21,6 +21,8 @@ public class HomeTests {
 		String dressName = driver.findElement
 				(By.xpath("//*[@id='center_column']/ul/li/div/div[2]/h5/a")).getText();
 		System.out.println(dressName);
+		driver.close();
+		driver.quit();
 	}
 
 }
