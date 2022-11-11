@@ -7,9 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
 	
-
+	WebDriver driver;
 	// Constructor
 	public HomePage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -29,8 +30,9 @@ public class HomePage {
 		searchTextBox.sendKeys("iphone");
 	}
 	
-	public void clickOnSearchButton() {
+	public SearchResultsPage clickOnSearchButton() {
 		searchButton.click();
+		return new SearchResultsPage(driver);
 	}
 	
 }
