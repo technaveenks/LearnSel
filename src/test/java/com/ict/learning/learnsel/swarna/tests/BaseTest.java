@@ -1,9 +1,11 @@
-package com.ict.learning.learnsel.utils;
+package com.ict.learning.learnsel.swarna.tests;
+
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 	private WebDriver driver;
@@ -12,7 +14,7 @@ public class BaseTest {
 		return driver;
 	}
 
-	@BeforeSuite
+	@BeforeTest
 	public void openBrowser() {
 		String path = System.getProperty("user.dir");
 		System.setProperty("webdriver.chrome.driver", path + "/mac-lib/chromedriver");
@@ -23,10 +25,11 @@ public class BaseTest {
 		System.out.println(title);
 	}
 
-	@AfterSuite
+	@AfterTest
 	public void closeBrowser() {
-		driver.close();
-		driver.quit();
+		//driver.close();
+		//driver.quit();
 	}
 
 }
+
