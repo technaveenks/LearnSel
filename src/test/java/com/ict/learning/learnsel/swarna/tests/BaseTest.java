@@ -1,4 +1,6 @@
-package com.ict.learning.learnsel.utils;
+package com.ict.learning.learnsel.swarna.tests;
+
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,8 +27,9 @@ public class BaseTest {
 
 	@AfterTest
 	public void closeBrowser() {
-		driver.close();
-		driver.quit();
+		//driver.close();
+		//driver.quit();
 	}
 
 }
+
