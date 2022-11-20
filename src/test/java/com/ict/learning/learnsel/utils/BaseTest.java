@@ -15,7 +15,7 @@ public class BaseTest {
 	@BeforeSuite
 	public void openBrowser() {
 		String path = System.getProperty("user.dir");
-		System.setProperty("webdriver.chrome.driver", path + "/mac-lib/chromedriver");
+		System.setProperty("webdriver.chrome.driver", path + "/lib/chromedriver");
 		driver = new ChromeDriver();
 		driver.get("http://tutorialsninja.com/demo/");
 		driver.manage().window().maximize();
