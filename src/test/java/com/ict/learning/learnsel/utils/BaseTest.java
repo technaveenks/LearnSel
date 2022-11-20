@@ -2,8 +2,8 @@ package com.ict.learning.learnsel.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
 	private WebDriver driver;
@@ -12,7 +12,7 @@ public class BaseTest {
 		return driver;
 	}
 
-	@BeforeTest
+	@BeforeSuite
 	public void openBrowser() {
 		String path = System.getProperty("user.dir");
 		System.setProperty("webdriver.chrome.driver", path + "/lib/chromedriver.exe");
@@ -23,7 +23,7 @@ public class BaseTest {
 		System.out.println(title);
 	}
 
-	@AfterTest
+	@AfterSuite
 	public void closeBrowser() {
 		driver.close();
 		driver.quit();

@@ -1,5 +1,6 @@
 package com.ict.learning.learnsel.tests;
 
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.ict.learning.learnsel.pages.HomePage;
@@ -10,10 +11,14 @@ public class Search_POM_TestNG extends BaseTest {
 
 	HomePage homePage;
 	SearchResultsPage searchResultsPage;
-
-	@Test
-	public void verifySuccessfulSearchOfItem() {
+	
+	@BeforeTest
+	public void setup() {
 		homePage = new HomePage(getDriver());
+	}
+
+	@Test(groups = { "smoke" })
+	public void verifySuccessfulSearchOfItem() {
 		// driver.findElement(By.xpath("//*[@id='search']/input")).clear();
 		homePage.clearSearchBox();
 		// driver.findElement(By.xpath("//*[@id='search']/input")).sendKeys("iphone");
@@ -24,7 +29,7 @@ public class Search_POM_TestNG extends BaseTest {
 
 	}
 
-	@Test
+	@Test(groups = { "smoke" })
 	public void verifySuccessfulSearchOfMacBook() {
 		/*
 		 * driver.findElement(By.xpath("//*[@id='search']/input")).clear();
