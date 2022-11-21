@@ -15,7 +15,7 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//*[@id='search']/input")
 	private WebElement searchTextBox;
 	
-	@FindBy(xpath="//*[@id='search']/span/button")
+	@FindBy(xpath="//*[@id='search']/span/buttons")
 	private WebElement searchButton;
 	
 	//Actions
